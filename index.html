@@ -88,28 +88,31 @@
                     <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-inno-blue focus:outline-none">
                         <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
                     </button>
-                    <div class="w-6 h-6 rounded bg-inno-gradient flex items-center justify-center">
+                    <div class="w-6 h-6 rounded bg-inno-gradient flex items-center justify-center shrink-0">
                         <i data-lucide="terminal" class="w-4 h-4 text-white"></i>
                     </div>
-                    <span class="font-bold text-inno-blue tracking-tight">Paolina <span class="text-inno-primary">x Innovorder</span></span>
+                    <span class="font-bold text-inno-blue tracking-tight whitespace-nowrap">Paolina <span class="text-inno-primary">x Innovorder</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium text-inno-gray1">
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-inno-gray1">
                     <a href="#stack" class="hover:text-inno-blue transition-colors">Stack maîtrisée</a>
                     <a href="#usecases" class="hover:text-inno-blue transition-colors">Mes réalisations</a>
                     <a href="#path" class="hover:text-inno-blue transition-colors">Mon parcours</a>
-                </div>
-                <div>
                     <a href="#deploy" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-inno-gradient hover:opacity-90 transition-opacity">
                         Me contacter
                     </a>
                 </div>
             </div>
         </div>
+
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-inno-shadow animate-in slide-in-from-top duration-300">
             <div class="px-4 pt-2 pb-6 space-y-4 text-sm font-medium text-inno-gray1 flex flex-col">
                 <a href="#stack" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2 border-b border-inno-gray6">Stack maîtrisée</a>
                 <a href="#usecases" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2 border-b border-inno-gray6">Mes réalisations</a>
-                <a href="#path" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2">Mon parcours</a>
+                <a href="#path" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2 border-b border-inno-gray6">Mon parcours</a>
+                <a href="#deploy" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-inno-gradient mt-2">
+                    Me contacter
+                </a>
             </div>
         </div>
     </nav>
