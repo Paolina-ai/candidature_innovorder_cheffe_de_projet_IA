@@ -77,9 +77,36 @@
             from { width: 0 }
             to { width: 100% }
         }
+
+        /* Styles pour le Pop-up */
+        #custom-popup-overlay {
+            transition: opacity 0.4s ease;
+        }
+        #custom-popup-content {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
     </style>
 </head>
 <body class="bg-inno-gray6 text-inno-black antialiased selection:bg-inno-primary selection:text-white">
+
+    <div id="custom-popup-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-inno-blue/40 backdrop-blur-sm p-4 opacity-0">
+        <div id="custom-popup-content" class="bg-white rounded-[2.5rem] p-8 sm:p-12 max-w-lg w-full shadow-2xl text-center transform scale-90">
+            <div class="w-20 h-20 bg-inno-orange/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="rocket" class="w-10 h-10 text-inno-orange"></i>
+            </div>
+            
+            <h2 class="text-3xl font-extrabold text-inno-blue mb-4 leading-tight">Attention !</h2>
+            
+            <p class="text-inno-gray1 text-lg font-medium leading-relaxed mb-10">
+                Vous allez découvrir le profil de votre <span class="text-inno-orange">future alternante cheffe de projet IA junior</span>...<br>
+                Êtes-vous prêt ?
+            </p>
+            
+            <button onclick="closePopup()" class="w-full py-4 bg-inno-bgDark text-white font-bold rounded-2xl hover:bg-inno-blue transition-colors shadow-lg shadow-inno-blue/20">
+                Oui !
+            </button>
+        </div>
+    </div>
 
     <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-inno-shadow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,7 +206,7 @@
 
     <section id="stack" class="pt-20 pb-10 bg-gradient-to-b from-inno-gray6 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 reveal">
+            <div class="mb-12 reveal" id="trigger-point">
                 <div class="inline-block border-b-4 border-inno-orange pb-2 mb-4 rounded-sm">
                     <h2 class="text-3xl font-extrabold text-inno-blue">Stack maîtrisée</h2>
                 </div>
@@ -705,7 +732,7 @@
     </section>
 
     <div class="bg-[#fafafb] pb-12 flex justify-center reveal">
-        <a href="CV_PaolinaRoiatti_Alternance_Chef_de_projet_IA.pdf" download class="inline-flex items-center gap-3 px-8 py-4 rounded-xl border-2 border-inno-blue text-inno-blue font-bold hover:bg-inno-blue hover:text-white transition-all transform hover:-translate-y-1 shadow-md">
+        <a href="CV_Paolina_Alternance_Chef_de_Projet_IA_Junior_Innovorder.pdf" download class="inline-flex items-center gap-3 px-8 py-4 rounded-xl border-2 border-inno-blue text-inno-blue font-bold hover:bg-inno-blue hover:text-white transition-all transform hover:-translate-y-1 shadow-md">
             <i data-lucide="download" class="w-5 h-5"></i>
             Télécharger le CV de Paolina
         </a>
@@ -768,6 +795,40 @@
     <script>
         lucide.createIcons();
 
+        // Variables pour la gestion du Pop-up
+        let popupShown = false;
+        const overlay = document.getElementById('custom-popup-overlay');
+        const content = document.getElementById('custom-popup-content');
+        const trigger = document.getElementById('trigger-point');
+
+        function openPopup() {
+            if (popupShown) return;
+            popupShown = true;
+            
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            
+            // Forcer un reflow pour l'animation
+            setTimeout(() => {
+                overlay.classList.replace('opacity-0', 'opacity-100');
+                content.classList.replace('scale-90', 'scale-100');
+                // Bloquer le scroll
+                document.body.style.overflow = 'hidden';
+            }, 10);
+        }
+
+        function closePopup() {
+            overlay.classList.replace('opacity-100', 'opacity-0');
+            content.classList.replace('scale-100', 'scale-90');
+            
+            setTimeout(() => {
+                overlay.classList.remove('flex');
+                overlay.classList.add('hidden');
+                // Rétablir le scroll
+                document.body.style.overflow = 'auto';
+            }, 400);
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
@@ -794,6 +855,7 @@
         }
 
         function reveal() {
+            // Logique de Reveal existante
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
@@ -803,7 +865,17 @@
                     reveals[i].classList.add("active");
                 }
             }
+
+            // Déclencheur du Pop-up (après le titre Stack maîtrisée)
+            if (!popupShown && trigger) {
+                const triggerTop = trigger.getBoundingClientRect().top;
+                // On déclenche quand le haut du bloc Stack Maîtrisée remonte au milieu de l'écran
+                if (triggerTop < (window.innerHeight / 2)) {
+                    openPopup();
+                }
+            }
         }
+
         window.addEventListener("scroll", reveal);
         reveal();
     </script>
