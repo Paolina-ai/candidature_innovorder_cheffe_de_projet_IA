@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paolina | Candidature Cheffe de projet IA - Innovorder</title>
     
-    <!-- Fonts: Plus Jakarta Sans (SaaS UI) & JetBrains Mono (Code) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Tailwind Config & Custom Styles -->
     <script>
         tailwind.config = {
             theme: {
@@ -85,11 +81,13 @@
 </head>
 <body class="bg-inno-gray6 text-inno-black antialiased selection:bg-inno-primary selection:text-white">
 
-    <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-inno-shadow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center gap-2">
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-inno-blue focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
                     <div class="w-6 h-6 rounded bg-inno-gradient flex items-center justify-center">
                         <i data-lucide="terminal" class="w-4 h-4 text-white"></i>
                     </div>
@@ -107,14 +105,19 @@
                 </div>
             </div>
         </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-inno-shadow animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-4 text-sm font-medium text-inno-gray1 flex flex-col">
+                <a href="#stack" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2 border-b border-inno-gray6">Stack maîtrisée</a>
+                <a href="#usecases" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2 border-b border-inno-gray6">Mes réalisations</a>
+                <a href="#path" onclick="toggleMobileMenu()" class="hover:text-inno-blue transition-colors py-2">Mon parcours</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
-                    <!-- Badge Candidature -->
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-inno-gray4 shadow-sm mb-6">
                         <span class="flex h-2 w-2 rounded-full bg-inno-primary"></span>
                         <span class="text-[10px] font-bold text-inno-blue tracking-wider uppercase">Candidature Cheffe de projet IA junior</span>
@@ -130,7 +133,6 @@
                     </p>
                 </div>
 
-                <!-- Terminal du haut -->
                 <div class="relative reveal transform lg:translate-x-4">
                     <div class="absolute -inset-1 bg-inno-gradient rounded-xl blur opacity-20"></div>
                     <div class="relative rounded-xl bg-inno-bgDark border border-inno-bgBlack shadow-2xl overflow-hidden">
@@ -172,7 +174,6 @@
         </div>
     </section>
 
-    <!-- Stack & Tools Section -->
     <section id="stack" class="pt-20 pb-10 bg-gradient-to-b from-inno-gray6 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 reveal">
@@ -182,7 +183,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Column 1 -->
                 <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
                         <i data-lucide="bot" class="w-6 h-6 text-inno-primary"></i>
@@ -216,7 +216,6 @@
                     </ul>
                 </div>
 
-                <!-- Column 2 -->
                 <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal" style="transition-delay: 100ms;">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
                         <i data-lucide="workflow" class="w-6 h-6 text-inno-primary"></i>
@@ -250,7 +249,6 @@
                     </ul>
                 </div>
 
-                <!-- Column 3 -->
                 <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal" style="transition-delay: 200ms;">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
                         <i data-lucide="database" class="w-6 h-6 text-inno-primary"></i>
@@ -275,11 +273,9 @@
         </div>
     </section>
 
-    <!-- Use Cases Section -->
     <section id="usecases" class="pt-10 pb-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
             <div class="bg-inno-gray6 rounded-[3rem] p-8 md:p-12 border border-inno-gray4 shadow-sm relative overflow-hidden">
-                <!-- Subtle decorative pattern -->
                 <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNlZWYyZjUiLz48L3N2Zz4=')] opacity-50"></div>
                 
                 <div class="relative z-10">
@@ -292,7 +288,6 @@
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         
-                        <!-- Projet 1 -->
                         <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-orange transition-colors group">
                             <div class="mb-4">
                                 <span class="text-[10px] font-mono uppercase tracking-wider text-inno-orange bg-inno-orange/10 px-2 py-1 rounded-md mb-3 inline-block">Workflow d'automatisation</span>
@@ -319,7 +314,6 @@
                             </div>
                         </div>
 
-                        <!-- Projet 2 -->
                         <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-lightBlue transition-colors group">
                             <div class="mb-4">
                                 <span class="text-[10px] font-mono uppercase tracking-wider text-inno-lightBlue bg-inno-lightBlue/10 px-2 py-1 rounded-md mb-3 inline-block">Scripting & Intégration API</span>
@@ -346,7 +340,6 @@
                             </div>
                         </div>
 
-                        <!-- Projet 3 -->
                         <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-purple-400 transition-colors group">
                             <div class="mb-4">
                                 <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400 bg-purple-400/10 px-2 py-1 rounded-md mb-3 inline-block">Agent GPT Custom</span>
@@ -369,7 +362,6 @@
                             </div>
                         </div>
 
-                        <!-- Projet 4 -->
                         <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-pink-400 transition-colors group">
                             <div class="mb-4">
                                 <span class="text-[10px] font-mono uppercase tracking-wider text-pink-400 bg-pink-400/10 px-2 py-1 rounded-md mb-3 inline-block">Workflow conditionnel</span>
@@ -394,7 +386,6 @@
                             </div>
                         </div>
 
-                        <!-- Projet 5 -->
                         <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-green transition-colors group">
                             <div class="mb-4">
                                 <span class="text-[10px] font-mono uppercase tracking-wider text-inno-green bg-inno-green/10 px-2 py-1 rounded-md mb-3 inline-block">Automatisation documentaire</span>
@@ -426,14 +417,12 @@
         </div>
     </section>
 
-    <!-- Visual Divider -->
     <div class="flex justify-center -my-8 relative z-20 reveal">
         <div class="w-12 h-12 bg-white border border-inno-gray4 rounded-full shadow-lg flex items-center justify-center text-inno-primary animate-bounce">
             <i data-lucide="arrow-down" class="w-6 h-6"></i>
         </div>
     </div>
 
-    <!-- Force de Proposition Section -->
     <section id="propositions" class="pt-20 pb-10 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center reveal">
@@ -449,7 +438,6 @@
             </div>
 
             <div class="space-y-4 reveal">
-                <!-- Accordions for Support, Produit, RH propositions -->
                 <div class="border border-inno-gray4 rounded-xl overflow-hidden bg-white hover:border-inno-blue transition-colors duration-200 shadow-sm">
                     <button onclick="toggleAccordion('support')" class="w-full flex justify-between items-center p-6 text-left focus:outline-none group">
                         <div class="flex items-center gap-4">
@@ -534,7 +522,6 @@
         </div>
     </section>
 
-    <!-- Apprentissage & Veille Section -->
     <section id="roadmap" class="pt-10 pb-20 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
             <div class="bg-blue-50/50 rounded-[3rem] p-10 md:p-14 border border-blue-100 shadow-sm">
@@ -545,7 +532,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Auto-formation Card -->
                     <div class="bg-white rounded-3xl p-8 border border-inno-gray4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow text-left">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-inno-blue flex items-center justify-center text-white shadow-lg shadow-inno-blue/20 shrink-0">
@@ -558,7 +544,6 @@
                         </p>
                     </div>
 
-                    <!-- Veille active Card -->
                     <div class="bg-white rounded-3xl p-8 border border-inno-gray4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow text-left">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-inno-orange flex items-center justify-center text-white shadow-lg shadow-inno-orange/20 shrink-0">
@@ -570,7 +555,6 @@
                             Je pratique une veille quotidienne pour identifier et tester les meilleures opportunités liées à l'IA.
                         </p>
                         
-                        <!-- Sources Section -->
                         <div class="pt-6 border-t border-inno-gray5">
                             <span class="text-[10px] font-bold text-inno-gray1 uppercase tracking-wider block mb-3">Mes ressources préférées :</span>
                             <div class="flex flex-wrap gap-2">
@@ -584,7 +568,6 @@
         </div>
     </section>
 
-    <!-- Mon Parcours Section -->
     <section id="path" class="pt-10 pb-10 bg-gradient-to-b from-white via-inno-gray6 to-inno-gray6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal text-left">
             <div class="bg-white rounded-[2.5rem] border border-inno-gray4 p-8 md:p-12 shadow-2xl relative z-10">
@@ -593,14 +576,11 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-16">
-                    <!-- Column: Formations -->
                     <div>
                         <h3 class="text-xs font-bold text-inno-gray1 uppercase tracking-[0.2em] mb-8">Formations</h3>
                         <div class="space-y-12 relative">
-                            <!-- Timeline Vertical Line -->
                             <div class="absolute left-[7px] top-2 bottom-2 w-[2px] bg-inno-gray5"></div>
 
-                            <!-- Formation 1 -->
                             <div class="relative pl-10">
                                 <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-orange z-10"></div>
                                 <div class="mb-1 text-xs font-bold text-inno-orange font-mono">2025 - 2027</div>
@@ -608,7 +588,6 @@
                                 <p class="text-inno-gray1 italic text-sm">ESD Paris</p>
                             </div>
 
-                            <!-- Formation 2 -->
                             <div class="relative pl-10">
                                 <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-gray4 z-10"></div>
                                 <div class="mb-1 text-xs font-bold text-inno-gray1 font-mono">2023 - 2024</div>
@@ -616,7 +595,6 @@
                                 <p class="text-inno-gray1 italic text-sm">UADY, Mexique (Échange universitaire)</p>
                             </div>
 
-                            <!-- Formation 3 -->
                             <div class="relative pl-10">
                                 <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-gray4 z-10"></div>
                                 <div class="mb-1 text-xs font-bold text-inno-gray1 font-mono">2021 - 2023</div>
@@ -626,11 +604,9 @@
                         </div>
                     </div>
 
-                    <!-- Column: Expériences Clés -->
                     <div>
                         <h3 class="text-xs font-bold text-inno-gray1 uppercase tracking-[0.2em] mb-8">Expériences clés</h3>
                         <div class="space-y-6">
-                            <!-- Exp 1 -->
                             <div class="p-6 rounded-2xl border border-inno-orange/20 bg-inno-orange/[0.02] relative group">
                                 <div class="absolute top-6 right-6 px-2 py-1 bg-inno-orange text-white text-[10px] font-bold uppercase rounded-md shadow-sm">Actuelle</div>
                                 <h4 class="text-lg font-extrabold text-inno-orange leading-tight mb-1">Alternante cheffe de projet SEO/GEO</h4>
@@ -640,7 +616,6 @@
                                 </p>
                             </div>
 
-                            <!-- Exp 2 -->
                             <div class="p-6 rounded-2xl border border-inno-gray4 bg-white group">
                                 <h4 class="text-lg font-extrabold text-inno-blue leading-tight mb-1">Stagiaire web éditorial</h4>
                                 <p class="text-sm font-bold text-inno-gray1 uppercase tracking-wider mb-3">CRT Centre-Val de Loire, Orléans</p>
@@ -655,13 +630,11 @@
         </div>
     </section>
 
-    <!-- Initier la collaboration Section -->
     <section id="deploy" class="pt-5 pb-24 bg-gradient-to-b from-inno-gray6 via-[#fafafb] to-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
             <h2 class="text-4xl font-extrabold text-inno-blue mb-6">Vous souhaitez en savoir davantage ?</h2>
             <p class="text-inno-black opacity-80 mb-10 text-lg font-medium max-w-2xl mx-auto">Je serais ravie d'échanger avec vous sur la façon dont je peux booster la performance d'Innovorder grâce à l'IA.</p>
             
-            <!-- Terminal de Conclusion avec Contacts Intégrés -->
             <div class="bg-inno-bgDark rounded-xl border border-inno-bgBlack p-6 sm:p-8 max-w-3xl mx-auto mb-12 text-left font-mono text-xs sm:text-sm shadow-2xl relative overflow-hidden">
                 <div class="flex items-center mb-6 border-b border-gray-800 pb-3">
                     <div class="flex space-x-2 mr-4">
@@ -694,15 +667,12 @@
                     <div class="pt-4 text-inno-primary font-bold">> Match validé. Prête pour échanger avec vous :</div>
                 </div>
 
-                <!-- Boutons de Contacts intégrés dans le Terminal -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-800 pt-8 mt-4">
-                    <!-- Email -->
                     <div class="bg-white/5 border border-white/10 p-4 rounded-lg flex flex-col gap-1">
                         <span class="text-[9px] uppercase tracking-wider text-inno-gray1 font-bold">Email</span>
                         <span class="text-[11px] text-white font-medium truncate">roiatti3paolina@gmail.com</span>
                     </div>
 
-                    <!-- LinkedIn (Seul cliquable) -->
                     <a href="https://www.linkedin.com/in/paolina-roiatti-3b0a5a223/" target="_blank" class="bg-inno-blue/40 border border-inno-lightBlue/30 p-4 rounded-lg flex flex-col gap-1 hover:bg-inno-blue/60 transition-colors group">
                         <span class="text-[9px] uppercase tracking-wider text-inno-lightBlue font-bold flex justify-between items-center">
                             LinkedIn
@@ -711,7 +681,6 @@
                         <span class="text-[11px] text-white font-medium group-hover:underline">Paolina Roiatti</span>
                     </a>
 
-                    <!-- Téléphone -->
                     <div class="bg-white/5 border border-white/10 p-4 rounded-lg flex flex-col gap-1">
                         <span class="text-[9px] uppercase tracking-wider text-inno-gray1 font-bold">Téléphone</span>
                         <span class="text-[11px] text-white font-medium">07 83 06 79 94</span>
@@ -724,7 +693,6 @@
                 </div>
             </div>
 
-            <!-- Infos Pratiques Section (Modèle Capture Image) -->
             <div class="max-w-3xl mx-auto bg-white rounded-[2.5rem] border border-inno-gray4 shadow-sm p-8 sm:p-12 relative reveal">
                 <div class="absolute -top-4 left-1/2 -translate-x-1/2">
                     <div class="bg-inno-gray6 border border-inno-gray4 rounded-full px-5 py-1.5 flex items-center gap-2 shadow-sm">
@@ -734,7 +702,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 text-left">
-                    <!-- Rythme -->
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-xl bg-inno-orange/10 flex items-center justify-center text-inno-orange shrink-0 mt-1">
                             <i data-lucide="clock" class="w-5 h-5"></i>
@@ -748,7 +715,6 @@
                         </div>
                     </div>
 
-                    <!-- Disponibilités -->
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-xl bg-inno-blue/10 flex items-center justify-center text-inno-blue shrink-0 mt-1">
                             <i data-lucide="calendar" class="w-5 h-5"></i>
@@ -764,8 +730,7 @@
                 </div>
             </div>
         </div>
-        <!-- Bouton Retour au début -->
-<div class="mt-16 flex justify-center reveal">
+        <div class="mt-16 flex justify-center reveal">
     <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-inno-gray4 bg-white text-inno-blue text-[10px] font-extrabold uppercase tracking-widest hover:bg-inno-gray6 transition-all hover:-translate-y-1 shadow-sm">
         <i data-lucide="arrow-up" class="w-4 h-4 text-inno-primary"></i>
         Revenir au début
@@ -773,16 +738,27 @@
 </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-inno-bgDark py-8 border-t border-gray-800 text-center">
         <p class="text-xs text-inno-gray1 font-mono uppercase tracking-widest">
             Construit avec passion pour Innovorder • 2026
         </p>
     </footer>
 
-    <!-- Scripts -->
     <script>
         lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
 
         function toggleAccordion(id) {
             const content = document.getElementById('content-' + id);
