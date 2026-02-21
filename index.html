@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paolina | Candidature Cheffe de projet IA - Innovorder</title>
+    
+    <!-- Fonts: Plus Jakarta Sans (SaaS UI) & JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        inno: {
+                            blue: '#261a63',
+                            orange: '#ff715a',
+                            primary: '#f96d6d',
+                            white: '#ffffff',
+                            gray6: '#f8f9fa',
+                            shadow: '#9aabb82e',
+                            black: '#304351',
+                            gray1: '#9aabb8',
+                            green: '#37b877',
+                            error: '#fa675c26',
+                            red: '#fa675c',
+                            gray5: '#eef2f5',
+                            lightBlue: '#5c9efa',
+                            gray4: '#d8e0e6',
+                            success: '#37b87726',
+                            bgBlack: '#272d3d',
+                            bgDark: '#202532'
+                        }
+                    },
+                    backgroundImage: {
+                        'inno-gradient': 'linear-gradient(135deg, #ff715a 0%, #f96d6d 100%)',
+                        'inno-gradient-hover': 'linear-gradient(135deg, #f96d6d 0%, #ff715a 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8f9fa; }
+        ::-webkit-scrollbar-thumb { background: #9aabb8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #261a63; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .code-line {
+            display: inline-block;
+            overflow: hidden; white-space: nowrap;
+            animation: typing 2s steps(40, end);
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+    </style>
+</head>
+<body class="bg-inno-gray6 text-inno-black antialiased selection:bg-inno-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-inno-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded bg-inno-gradient flex items-center justify-center">
+                        <i data-lucide="terminal" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span class="font-bold text-inno-blue tracking-tight">Paolina <span class="text-inno-primary">x Innovorder</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-inno-gray1">
+                    <a href="#stack" class="hover:text-inno-blue transition-colors">Stack maîtrisée</a>
+                    <a href="#usecases" class="hover:text-inno-blue transition-colors">Mes réalisations</a>
+                    <a href="#path" class="hover:text-inno-blue transition-colors">Mon parcours</a>
+                </div>
+                <div>
+                    <a href="#deploy" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-inno-gradient hover:opacity-90 transition-opacity">
+                        Me contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <!-- Badge Candidature -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-inno-gray4 shadow-sm mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-inno-primary"></span>
+                        <span class="text-[10px] font-bold text-inno-blue tracking-wider uppercase">Candidature Cheffe de projet IA junior</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-inno-blue leading-tight tracking-tight mb-6">
+                        Construire, tester <br>
+                        et livrer <br>
+                        <span class="bg-clip-text text-transparent bg-inno-gradient">l'IA en interne.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-inno-black mb-8 max-w-xl font-medium leading-relaxed">
+                        Je suis Paolina, candidate pour le poste de <strong class="text-inno-blue">Chef de projet IA junior</strong>.
+                    </p>
+                </div>
+
+                <!-- Terminal du haut -->
+                <div class="relative reveal transform lg:translate-x-4">
+                    <div class="absolute -inset-1 bg-inno-gradient rounded-xl blur opacity-20"></div>
+                    <div class="relative rounded-xl bg-inno-bgDark border border-inno-bgBlack shadow-2xl overflow-hidden">
+                        <div class="flex items-center px-4 py-3 bg-[#181C25] border-b border-gray-800">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-inno-red"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-inno-green"></div>
+                            </div>
+                            <div class="mx-auto text-xs text-inno-gray1 font-mono">terminal</div>
+                        </div>
+                        <div class="p-4 sm:p-6 font-mono text-xs sm:text-sm overflow-x-auto">
+                            <div class="text-inno-lightBlue mb-2 code-line">> ./initialiser_la_candidature</div>
+                            <div class="text-inno-gray1 mb-4">Chargement du profil de Paolina... OK</div>
+                            
+                            <div class="text-inno-lightBlue mb-2">> objectif_alternance --cible="Innovorder"</div>
+                            <div class="text-inno-gray1 mb-1">Étude de l'offre et des besoins métiers... OK</div>
+                            <div class="text-inno-gray1 mb-1">Construire les outils, workflows et agents autonomes... OK</div>
+                            <div class="text-inno-gray1 mb-4">Améliorer la productivité et libérer du temps aux équipes Innovorder... OK</div>
+
+                            <div class="text-inno-green font-bold mb-2">> Analyse terminée. Déploiement de la candidature...</div>
+                            <div class="text-[10px] text-inno-gray1 italic">Scrollez pour découvrir le profil.</div>
+                            
+                            <div class="flex items-center text-inno-gray1 mt-4">
+                                <span class="text-inno-orange mr-2">➜</span>
+                                <span class="animate-pulse">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 lg:mt-16 flex justify-center reveal">
+                <a href="#stack" class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-inno-gradient hover:opacity-90 transition-all transform hover:-translate-y-0.5">
+                    Découvrir le profil
+                    <i data-lucide="arrow-down" class="w-6 h-6 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stack & Tools Section -->
+    <section id="stack" class="pt-20 pb-10 bg-gradient-to-b from-inno-gray6 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 reveal">
+                <div class="inline-block border-b-4 border-inno-orange pb-2 mb-4 rounded-sm">
+                    <h2 class="text-3xl font-extrabold text-inno-blue">Stack maîtrisée</h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Column 1 -->
+                <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
+                        <i data-lucide="bot" class="w-6 h-6 text-inno-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-inno-blue mb-6">Vibe Coding & LLMs</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Lovable</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4 relative overflow-hidden">
+                            <span class="font-semibold text-inno-black relative z-10">Cursor</span>
+                            <span class="text-xs bg-inno-orange/10 text-inno-orange px-2 py-1 rounded font-mono relative z-10">En cours</span>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Gemini</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">ChatGPT</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Perplexity</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4 relative overflow-hidden">
+                            <span class="font-semibold text-inno-black relative z-10">Claude Code</span>
+                            <span class="text-xs bg-inno-orange/10 text-inno-orange px-2 py-1 rounded font-mono relative z-10">En cours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
+                        <i data-lucide="workflow" class="w-6 h-6 text-inno-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-inno-blue mb-6">Workflows & Logique</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">n8n</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Make</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Zapier</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Google Apps Script</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Intégrations API</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4 relative overflow-hidden">
+                            <span class="font-semibold text-inno-black relative z-10">Dust</span>
+                            <span class="text-xs bg-inno-orange/10 text-inno-orange px-2 py-1 rounded font-mono relative z-10">En cours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="bg-inno-gray6 rounded-2xl p-8 border border-inno-gray5 reveal" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
+                        <i data-lucide="database" class="w-6 h-6 text-inno-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-inno-blue mb-6">Data & Apps internes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Airtable</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Softr</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                        <li class="flex items-start justify-between bg-white p-3 rounded-lg shadow-sm border border-inno-gray4">
+                            <span class="font-semibold text-inno-black">Notion</span>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-inno-green"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="usecases" class="pt-10 pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="bg-inno-gray6 rounded-[3rem] p-8 md:p-12 border border-inno-gray4 shadow-sm relative overflow-hidden">
+                <!-- Subtle decorative pattern -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNlZWYyZjUiLz48L3N2Zz4=')] opacity-50"></div>
+                
+                <div class="relative z-10">
+                    <div class="mb-12">
+                        <div class="inline-block border-b-4 border-inno-primary pb-2 mb-4 rounded-sm">
+                            <h2 class="text-3xl font-extrabold text-inno-blue">Ce que j'ai déjà réalisé</h2>
+                        </div>
+                        <p class="text-inno-black max-w-2xl mt-4 font-medium opacity-80">Voici les workflows et agents que j'ai déjà construits. Pour chacun, j'ai identifié comment la logique technique utilisée répond directement aux cas d'usage de votre offre d'alternance.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Projet 1 -->
+                        <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-orange transition-colors group">
+                            <div class="mb-4">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-inno-orange bg-inno-orange/10 px-2 py-1 rounded-md mb-3 inline-block">Workflow d'automatisation</span>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-inno-orange/20 flex items-center justify-center text-inno-orange shrink-0">
+                                        <i data-lucide="git-merge"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold leading-tight text-white">Le chef d’orchestre des leads</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-inno-gray1 mb-6 flex-grow">Dès qu'un prospect remplit un formulaire, ses données sont envoyées instantanément au bon endroit : Airtable pour le suivi, Slack pour l'alerte et Trello pour l'action.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-inno-gray4 mb-6">
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Make</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Tally</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Airtable</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Slack</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Trello</span>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-xl border border-gray-700 border-l-4 border-l-inno-orange">
+                                <h4 class="text-[10px] font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-3 h-3 text-inno-orange"></i> Application pour Innovorder
+                                </h4>
+                                <p class="text-xs font-medium text-inno-gray1 leading-relaxed">Logique technique idéale pour votre Automatisation de la prospection : enrichissement du lead, routing intelligent et injection CRM.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projet 2 -->
+                        <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-lightBlue transition-colors group">
+                            <div class="mb-4">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-inno-lightBlue bg-inno-lightBlue/10 px-2 py-1 rounded-md mb-3 inline-block">Scripting & Intégration API</span>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-inno-lightBlue/20 flex items-center justify-center text-inno-lightBlue shrink-0">
+                                        <i data-lucide="bar-chart-2"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold leading-tight text-white">Le reporting GEO automatisé</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-inno-gray1 mb-6 flex-grow">Récupération de données via l'API Qwairy grâce à App Script pour générer un reporting complet sur Google Sheets et envoyer un résumé sur Slack.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-inno-gray4 mb-6">
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">API Qwairy</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Make</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Apps Script</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Sheets</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Slack</span>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-xl border border-gray-700 border-l-4 border-l-inno-lightBlue">
+                                <h4 class="text-[10px] font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-3 h-3 text-inno-lightBlue"></i> Application pour Innovorder
+                                </h4>
+                                <p class="text-xs font-medium text-inno-gray1 leading-relaxed">Même architecture que l'Automatisation comptable : aller chercher de la donnée brute (API/Emails), la pré-traiter via script par exemple et la structurer sous forme de rapport.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projet 3 -->
+                        <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-purple-400 transition-colors group">
+                            <div class="mb-4">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400 bg-purple-400/10 px-2 py-1 rounded-md mb-3 inline-block">Agent GPT Custom</span>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                                        <i data-lucide="bot"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold leading-tight text-white">Assistant rédaction (Blog Les Sherpas)</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-inno-gray1 mb-6 flex-grow">Agent expert nourri avec une base de connaissances interne pour maximiser la productivité et garantir une fidélité absolue à la charte éditoriale.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-inno-gray4 mb-6">
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">GPT Custom</span>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-xl border border-gray-700 border-l-4 border-l-purple-400">
+                                <h4 class="text-[10px] font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-3 h-3 text-purple-400"></i> Application pour Innovorder
+                                </h4>
+                                <p class="text-xs font-medium text-inno-gray1 leading-relaxed">Fondation parfaite pour l'Assistant aux appels d'offres : entraîner un agent sur vos documents internes pour générer des réponses expertes, sourcées et structurées.</p>
+                            </div>
+                        </div>
+
+                        <!-- Projet 4 -->
+                        <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-pink-400 transition-colors group">
+                            <div class="mb-4">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-pink-400 bg-pink-400/10 px-2 py-1 rounded-md mb-3 inline-block">Workflow conditionnel</span>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
+                                        <i data-lucide="route"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold leading-tight text-white">L’aiguilleur satisfaction</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-inno-gray1 mb-6 flex-grow">Un système de filtres logiques qui "lit" les avis. Envoi d'un merci automatique ou déclenchement d'une alerte immédiate au support en cas de score décevant pour une réactivité maximale.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-inno-gray4 mb-6">
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Make</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Tally</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Gmail</span>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-xl border border-gray-700 border-l-4 border-l-pink-400">
+                                <h4 class="text-[10px] font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-3 h-3 text-pink-400"></i> Application pour Innovorder
+                                </h4>
+                                <p class="text-xs font-medium text-inno-gray1 leading-relaxed">Directement applicable à la Création de plans de formation clients : analyser les besoins du client (score/type) en entrée et déclencher le parcours adapté..</p>
+                            </div>
+                        </div>
+
+                        <!-- Projet 5 -->
+                        <div class="bg-inno-bgDark rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col h-full hover:border-inno-green transition-colors group">
+                            <div class="mb-4">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-inno-green bg-inno-green/10 px-2 py-1 rounded-md mb-3 inline-block">Automatisation documentaire</span>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-inno-green/20 flex items-center justify-center text-inno-green shrink-0">
+                                        <i data-lucide="file-output"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold leading-tight text-white">L’usine à comptes rendus</h3>
+                                </div>
+                            </div>
+                            <p class="text-sm text-inno-gray1 mb-6 flex-grow">Transforme instantanément des notes de rendez-vous brutes en un document PDF professionnel, formaté selon la charte graphique et archivé automatiquement dans le Drive.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-inno-gray4 mb-6">
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Make</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Google Docs</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Google Drive</span>
+                                <span class="bg-black/40 px-2 py-1 rounded text-white/70">Slack</span>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-xl border border-gray-700 border-l-4 border-l-inno-green">
+                                <h4 class="text-[10px] font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-3 h-3 text-inno-green"></i> Application pour Innovorder
+                                </h4>
+                                <p class="text-xs font-medium text-inno-gray1 leading-relaxed">Directement applicable à la génération de documents structurés (comptabilité, synthèses d'appels d'offres...).</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="flex justify-center -my-8 relative z-20 reveal">
+        <div class="w-12 h-12 bg-white border border-inno-gray4 rounded-full shadow-lg flex items-center justify-center text-inno-primary animate-bounce">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+        </div>
+    </div>
+
+    <!-- Force de Proposition Section -->
+    <section id="propositions" class="pt-20 pb-10 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center reveal">
+                <div class="inline-block border-b-4 border-inno-orange pb-2 mb-6 rounded-sm">
+                    <h2 class="text-3xl font-extrabold text-inno-blue">Ce que j'aimerais construire pour Innovorder</h2>
+                </div>
+                <div class="bg-inno-gray6 border border-inno-gray5 rounded-lg p-4 inline-block text-left max-w-2xl">
+                    <p class="text-sm text-inno-gray1 flex gap-3">
+                        <i data-lucide="info" class="w-5 h-5 text-inno-blue shrink-0 mt-0.5"></i>
+                        <span><strong class="text-inno-black">Important :</strong> Ne connaissant pas encore vos outils, ni même ce qui est déja mis en place, ce ne sont que des pistes que je vous présente pour vous montrer ma logique .</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- Accordions for Support, Produit, RH propositions -->
+                <div class="border border-inno-gray4 rounded-xl overflow-hidden bg-white hover:border-inno-blue transition-colors duration-200 shadow-sm">
+                    <button onclick="toggleAccordion('support')" class="w-full flex justify-between items-center p-6 text-left focus:outline-none group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500 shrink-0">
+                                <i data-lucide="life-buoy"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-inno-blue text-lg group-hover:text-inno-primary transition-colors">Support | L'Assistant "Urgences"</h3>
+                                <p class="text-sm text-inno-gray1 mt-1">Préparer automatiquement les réponses aux restaurateurs en difficulté.</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" id="icon-support" class="text-inno-gray1 transition-transform duration-300 w-5 h-5 shrink-0 ml-4"></i>
+                    </button>
+                    <div id="content-support" class="hidden px-6 pb-6 pt-2 border-t border-inno-gray5">
+                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-inno-gray1 uppercase tracking-wider mb-2">Comment ça marche ?</h4>
+                                <p class="text-sm text-inno-black leading-relaxed">L'IA lit le message du client, comprend le problème (ex: borne en panne en plein service), cherche la solution dans vos guides internes, et écrit un brouillon de réponse pour l'équipe Support.</p>
+                            </div>
+                            <div class="bg-inno-gray6 p-4 rounded-lg border border-inno-gray5">
+                                <h4 class="text-xs font-bold text-inno-green uppercase tracking-wider mb-2">Bénéfice</h4>
+                                <p class="text-sm font-medium text-inno-black leading-relaxed">L'équipe Support répond beaucoup plus vite pendant les "coups de feu" du midi. Moins de stress, plus d'efficacité.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-inno-gray4 rounded-xl overflow-hidden bg-white hover:border-inno-blue transition-colors duration-200 shadow-sm">
+                    <button onclick="toggleAccordion('produit')" class="w-full flex justify-between items-center p-6 text-left focus:outline-none group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-inno-orange/10 flex items-center justify-center text-inno-orange shrink-0">
+                                <i data-lucide="radar"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-inno-blue text-lg group-hover:text-inno-primary transition-colors">Produit | L'Analyseur de besoins clients</h3>
+                                <p class="text-sm text-inno-gray1 mt-1">Transformer les retours terrain en idées d'amélioration.</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" id="icon-produit" class="text-inno-gray1 transition-transform duration-300 w-5 h-5 shrink-0 ml-4"></i>
+                    </button>
+                    <div id="content-produit" class="hidden px-6 pb-6 pt-2 border-t border-inno-gray5">
+                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-inno-gray1 uppercase tracking-wider mb-2">Comment ça marche ?</h4>
+                                <p class="text-sm text-inno-black leading-relaxed">Une IA lit tous les messages des clients (tickets de support, notes des commerciaux) chaque semaine. Elle regroupe automatiquement les demandes d'améliorations les plus fréquentes</p>
+                            </div>
+                            <div class="bg-inno-gray6 p-4 rounded-lg border border-inno-gray5">
+                                <h4 class="text-xs font-bold text-inno-green uppercase tracking-wider mb-2">Bénéfice</h4>
+                                <p class="text-sm font-medium text-inno-black leading-relaxed">L'équipe Produit sait exactement ce que veulent les clients, sans avoir à trier des centaines de messages à la main.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-inno-gray4 rounded-xl overflow-hidden bg-white hover:border-inno-blue transition-colors duration-200 shadow-sm">
+                    <button onclick="toggleAccordion('rh')" class="w-full flex justify-between items-center p-6 text-left focus:outline-none group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 shrink-0">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-inno-blue text-lg group-hover:text-inno-primary transition-colors">Ressources Humaines | Le Guide d'arrivée automatique</h3>
+                                <p class="text-sm text-inno-gray1 mt-1">Répondre instantanément aux questions des nouveaux employés.</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" id="icon-rh" class="text-inno-gray1 transition-transform duration-300 w-5 h-5 shrink-0 ml-4"></i>
+                    </button>
+                    <div id="content-rh" class="hidden px-6 pb-6 pt-2 border-t border-inno-gray5">
+                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-inno-gray1 uppercase tracking-wider mb-2">Comment ça marche ?</h4>
+                                <p class="text-sm text-inno-black leading-relaxed">Un agent IA est connecté à vos documents internes. Un nouveau collaborateur pose une question (ex: mutuelle), et l'IA lui donne la bonne réponse tout de suite.</p>
+                            </div>
+                            <div class="bg-inno-gray6 p-4 rounded-lg border border-inno-gray5">
+                                <h4 class="text-xs font-bold text-inno-green uppercase tracking-wider mb-2">Bénéfice</h4>
+                                <p class="text-sm font-medium text-inno-black leading-relaxed">L'équipe RH gagne du temps en ne répondant plus aux mêmes questions basiques, et l'intégration des nouveaux collaborateurs est plus fluide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apprentissage & Veille Section -->
+    <section id="roadmap" class="pt-10 pb-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="bg-blue-50/50 rounded-[3rem] p-10 md:p-14 border border-blue-100 shadow-sm">
+                <div class="mb-12 text-center">
+                    <div class="inline-block border-b-4 border-inno-orange pb-2 rounded-sm">
+                        <h2 class="text-3xl font-extrabold text-inno-blue tracking-tight">Apprentissage & Veille continue</h2>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Auto-formation Card -->
+                    <div class="bg-white rounded-3xl p-8 border border-inno-gray4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow text-left">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-inno-blue flex items-center justify-center text-white shadow-lg shadow-inno-blue/20 shrink-0">
+                                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-inno-blue text-xl text-left">Auto-formation</h3>
+                        </div>
+                        <p class="text-inno-black leading-relaxed text-lg flex-grow">
+                            Je me forme actuellement sur l'outil <strong class="text-inno-orange">Cursor</strong>, sur mon temps personnel, et je compte très prochainement me former à <strong class="text-inno-orange">Claude Code</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Veille active Card -->
+                    <div class="bg-white rounded-3xl p-8 border border-inno-gray4 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow text-left">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-inno-orange flex items-center justify-center text-white shadow-lg shadow-inno-orange/20 shrink-0">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-inno-blue text-xl text-left">Veille active</h3>
+                        </div>
+                        <p class="text-inno-black leading-relaxed mb-8 flex-grow">
+                            Je pratique une veille quotidienne pour identifier et tester les meilleures opportunités liées à l'IA.
+                        </p>
+                        
+                        <!-- Sources Section -->
+                        <div class="pt-6 border-t border-inno-gray5">
+                            <span class="text-[10px] font-bold text-inno-gray1 uppercase tracking-wider block mb-3">Mes ressources préférées :</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-inno-gray6 rounded-lg border border-inno-gray4 text-[11px] font-semibold text-inno-blue">Superhuman (Zain Kahn)</span>
+                                <span class="px-3 py-1.5 bg-inno-gray6 rounded-lg border border-inno-gray4 text-[11px] font-semibold text-inno-blue">AI Secret</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mon Parcours Section -->
+    <section id="path" class="pt-10 pb-10 bg-gradient-to-b from-white via-inno-gray6 to-inno-gray6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal text-left">
+            <div class="bg-white rounded-[2.5rem] border border-inno-gray4 p-8 md:p-12 shadow-2xl relative z-10">
+                <div class="inline-block border-b-4 border-inno-orange pb-2 mb-12 rounded-sm">
+                    <h2 class="text-3xl font-extrabold text-inno-blue tracking-tight">Mon parcours</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Column: Formations -->
+                    <div>
+                        <h3 class="text-xs font-bold text-inno-gray1 uppercase tracking-[0.2em] mb-8">Formations</h3>
+                        <div class="space-y-12 relative">
+                            <!-- Timeline Vertical Line -->
+                            <div class="absolute left-[7px] top-2 bottom-2 w-[2px] bg-inno-gray5"></div>
+
+                            <!-- Formation 1 -->
+                            <div class="relative pl-10">
+                                <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-orange z-10"></div>
+                                <div class="mb-1 text-xs font-bold text-inno-orange font-mono">2025 - 2027</div>
+                                <h4 class="text-lg font-extrabold text-inno-blue leading-tight mb-1">Mastère Stratégies e-business</h4>
+                                <p class="text-inno-gray1 italic text-sm">ESD Paris</p>
+                            </div>
+
+                            <!-- Formation 2 -->
+                            <div class="relative pl-10">
+                                <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-gray4 z-10"></div>
+                                <div class="mb-1 text-xs font-bold text-inno-gray1 font-mono">2023 - 2024</div>
+                                <h4 class="text-lg font-extrabold text-inno-blue leading-tight mb-1">BUT 3 Techniques de commercialisation</h4>
+                                <p class="text-inno-gray1 italic text-sm">UADY, Mexique (Échange universitaire)</p>
+                            </div>
+
+                            <!-- Formation 3 -->
+                            <div class="relative pl-10">
+                                <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-inno-gray4 z-10"></div>
+                                <div class="mb-1 text-xs font-bold text-inno-gray1 font-mono">2021 - 2023</div>
+                                <h4 class="text-lg font-extrabold text-inno-blue leading-tight mb-1">BUT 1 & 2 Techniques de commercialisation</h4>
+                                <p class="text-inno-gray1 italic text-sm">IUT d'Angers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column: Expériences Clés -->
+                    <div>
+                        <h3 class="text-xs font-bold text-inno-gray1 uppercase tracking-[0.2em] mb-8">Expériences clés</h3>
+                        <div class="space-y-6">
+                            <!-- Exp 1 -->
+                            <div class="p-6 rounded-2xl border border-inno-orange/20 bg-inno-orange/[0.02] relative group">
+                                <div class="absolute top-6 right-6 px-2 py-1 bg-inno-orange text-white text-[10px] font-bold uppercase rounded-md shadow-sm">Actuelle</div>
+                                <h4 class="text-lg font-extrabold text-inno-orange leading-tight mb-1">Alternante cheffe de projet SEO/GEO</h4>
+                                <p class="text-sm font-bold text-inno-blue uppercase tracking-wider mb-3">Les Sherpas, Paris</p>
+                                <p class="text-sm text-inno-black leading-relaxed italic border-l-2 border-inno-orange/30 pl-4">
+                                    Pilotage stratégique de la visibilité sur les moteurs classiques (SEO) et IA (GEO). Création d’agents personnalisés (GPTs) pour automatiser les processus éditoriaux. Suivi et reporting automatisé des résultats pour optimiser nos actions.
+                                </p>
+                            </div>
+
+                            <!-- Exp 2 -->
+                            <div class="p-6 rounded-2xl border border-inno-gray4 bg-white group">
+                                <h4 class="text-lg font-extrabold text-inno-blue leading-tight mb-1">Stagiaire web éditorial</h4>
+                                <p class="text-sm font-bold text-inno-gray1 uppercase tracking-wider mb-3">CRT Centre-Val de Loire, Orléans</p>
+                                <p class="text-sm text-inno-black leading-relaxed italic border-l-2 border-inno-gray4 pl-4">
+                                    Création de contenus optimisés SEO.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initier la collaboration Section -->
+    <section id="deploy" class="pt-5 pb-24 bg-gradient-to-b from-inno-gray6 via-[#fafafb] to-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <h2 class="text-4xl font-extrabold text-inno-blue mb-6">Vous souhaitez en savoir davantage ?</h2>
+            <p class="text-inno-black opacity-80 mb-10 text-lg font-medium max-w-2xl mx-auto">Je serais ravie d'échanger avec vous sur la façon dont je peux booster la performance d'Innovorder grâce à l'IA.</p>
+            
+            <!-- Terminal de Conclusion avec Contacts Intégrés -->
+            <div class="bg-inno-bgDark rounded-xl border border-inno-bgBlack p-6 sm:p-8 max-w-3xl mx-auto mb-12 text-left font-mono text-xs sm:text-sm shadow-2xl relative overflow-hidden">
+                <div class="flex items-center mb-6 border-b border-gray-800 pb-3">
+                    <div class="flex space-x-2 mr-4">
+                        <div class="w-3 h-3 rounded-full bg-inno-red"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-inno-green"></div>
+                    </div>
+                    <span class="text-inno-gray1 text-[10px] uppercase tracking-widest">System Validation</span>
+                </div>
+                
+                <div class="space-y-2 mb-8">
+                    <div class="text-inno-lightBlue">> lancer_check_final --profil="Paolina"</div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-inno-green font-bold">[OK]</span>
+                        <span class="text-inno-gray1">Compréhension des enjeux business</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-inno-green font-bold">[OK]</span>
+                        <span class="text-inno-gray1">Mindset pragmatique et orienté impact</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-inno-green font-bold">[OK]</span>
+                        <span class="text-inno-gray1">Envie de construire, tester et livrer</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-inno-green font-bold">[OK]</span>
+                        <span class="text-inno-gray1">Autonome, curieuse, rigoureuse, force de proposition, à l'écoute</span>
+                    </div>
+                    
+                    <div class="pt-4 text-inno-primary font-bold">> Match validé. Prête pour échanger avec vous :</div>
+                </div>
+
+                <!-- Boutons de Contacts intégrés dans le Terminal -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-800 pt-8 mt-4">
+                    <!-- Email -->
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-lg flex flex-col gap-1">
+                        <span class="text-[9px] uppercase tracking-wider text-inno-gray1 font-bold">Email</span>
+                        <span class="text-[11px] text-white font-medium truncate">roiatti3paolina@gmail.com</span>
+                    </div>
+
+                    <!-- LinkedIn (Seul cliquable) -->
+                    <a href="https://www.linkedin.com/in/paolina-roiatti-3b0a5a223/" target="_blank" class="bg-inno-blue/40 border border-inno-lightBlue/30 p-4 rounded-lg flex flex-col gap-1 hover:bg-inno-blue/60 transition-colors group">
+                        <span class="text-[9px] uppercase tracking-wider text-inno-lightBlue font-bold flex justify-between items-center">
+                            LinkedIn
+                            <i data-lucide="external-link" class="w-2.5 h-2.5"></i>
+                        </span>
+                        <span class="text-[11px] text-white font-medium group-hover:underline">Paolina Roiatti</span>
+                    </a>
+
+                    <!-- Téléphone -->
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-lg flex flex-col gap-1">
+                        <span class="text-[9px] uppercase tracking-wider text-inno-gray1 font-bold">Téléphone</span>
+                        <span class="text-[11px] text-white font-medium">07 83 06 79 94</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center text-inno-gray1 mt-6">
+                    <span class="text-inno-orange mr-2">➜</span>
+                    <span class="animate-pulse">_</span>
+                </div>
+            </div>
+
+            <!-- Infos Pratiques Section (Modèle Capture Image) -->
+            <div class="max-w-3xl mx-auto bg-white rounded-[2.5rem] border border-inno-gray4 shadow-sm p-8 sm:p-12 relative reveal">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div class="bg-inno-gray6 border border-inno-gray4 rounded-full px-5 py-1.5 flex items-center gap-2 shadow-sm">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-inno-blue"></i>
+                        <span class="text-[10px] font-extrabold text-inno-blue uppercase tracking-widest">Infos Pratiques</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 text-left">
+                    <!-- Rythme -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-inno-orange/10 flex items-center justify-center text-inno-orange shrink-0 mt-1">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] font-bold text-inno-gray1 uppercase tracking-widest mb-1">Rythme d'alternance</h4>
+                            <p class="text-sm font-extrabold text-inno-blue leading-snug">
+                                1 jour à l'école / 4 jours en entreprise
+                                <span class="block mt-1 text-xs font-medium text-inno-black opacity-70 italic">+ 1 semaine complète à l'école toutes les 4 à 5 semaines.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Disponibilités -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-inno-blue/10 flex items-center justify-center text-inno-blue shrink-0 mt-1">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] font-bold text-inno-gray1 uppercase tracking-widest mb-1">Disponibilités</h4>
+                            <p class="text-sm font-extrabold text-inno-blue leading-snug">
+                                À partir de septembre 2026
+                                <span class="block mt-1 text-xs font-medium text-inno-black opacity-70 italic">(à déterminer selon vos besoins).</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-inno-bgDark py-8 border-t border-gray-800 text-center">
+        <p class="text-xs text-inno-gray1 font-mono uppercase tracking-widest">
+            Construit avec passion pour Innovorder • 2026
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
